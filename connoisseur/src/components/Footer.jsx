@@ -13,7 +13,7 @@ const Footer = () => {
               <ul className=" font-medium">
                 <li className="mb-4">
                   <a href="#" className="hover:underline">
-                    JOYTOWN
+                    CONNOISSEUR
                   </a>
                 </li>
               </ul>

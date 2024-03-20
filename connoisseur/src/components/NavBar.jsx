@@ -1,38 +1,24 @@
 import { NavLink } from "react-router-dom";
 import { navlogo } from "../assets/assets";
 import { IoMdMenu } from "react-icons/io";
-import { useState } from "react";
+import { FaSearch, FaUser } from "react-icons/fa";
+import Button from "./Button";
 
 const menu = [
   {
     id: 1,
-    name: "Electronics",
-    link: "/electronics",
-  },
-  {
-    id: 2,
-    name: "Health & Beauty",
-    link: "/health",
-  },
-  {
-    id: 3,
     name: "Men's Fashion",
     link: "/mensfashion",
   },
   {
-    id: 4,
+    id: 2,
     name: "Women's Fashion",
     link: "/womensfashion",
   },
   {
-    id: 5,
+    id: 3,
     name: "Sports",
     link: "/sports",
-  },
-  {
-    id: 6,
-    name: "Groceries",
-    link: "/groceries",
   },
 ];
 
@@ -61,6 +47,29 @@ const NavBar = () => {
           {val.name}
         </NavLink>
       ))}
+      <div className="flex ml-8 ">
+        <div className=" flex items-center max-sm:ml-[-2rem]">
+          <input
+            type="text"
+            placeholder="Search..."
+            className="border border-gray-300 rounded-l-md px-4 py-2 focus:outline-none focus:border-blue-500  "
+          />
+          <button className="bg-secondary text-tertiary rounded-r-md px-4 py-2">
+            <FaSearch className="h-6 w-6" />
+          </button>
+        </div>
+        <div className="px-2 space-x-2 flex items-center">
+          <Button
+            value="Sign Up"
+            className="bg-secondary text-tertiary px-4 py-2 rounded-sm shadow-lg hover:bg-primary m max-sm:text-sm max-sm:px-2 "></Button>
+          <div className="lg:px-3">
+            <button className="bg-secondary text-tertiary px-4 py-2 rounded-sm shadow-lg hover:bg-primary flex items-center  max-sm:text-sm max-sm:px-2 ">
+              <FaUser className="mr-2" />
+              Login
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

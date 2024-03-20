@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Button from "./Button";
 import {
   image1,
@@ -10,13 +10,22 @@ import {
   product3,
 } from "../assets/assets";
 import Card from "./Card";
-import Footer from "./Footer";
+import { TimerContext } from "./TimerProvider";
 
 const Header = () => {
+  const { flashSale } = useContext(TimerContext);
+
+  const hours = Math.floor(flashSale / 3600);
+  const minutes = Math.floor((flashSale % 3600) / 60);
+  const seconds = flashSale % 60;
+
   return (
     <div>
       <div className="bg-primary   text-tertiary flex flex-row items-center justify-center  h-[7vh]">
-        <h2 className="">AUTUMN SALE STARTS NOW </h2>
+        <div className="uppercase">
+          Flash Sale Ends In: {hours}h {minutes}m {seconds}s
+        </div>
+
         <Button
           className="bg-tertiary text-primary rounded-sm ml-4 font-medium hover:bg-gray-300 px-3 "
           value="Register Now"></Button>
@@ -70,7 +79,7 @@ const Header = () => {
       <Button
         className="bg-secondary text-tertiary px-5 py-3 rounded-sm shadow-lg  ml-[47%] mb-4"
         value="Visit There"
-        to="/electronics"></Button>
+        to="/mensfashion"></Button>
       <div className=" bg-primary h-fit w-full mb-6">
         <div className=" flex flex-wrap relative items-center justify-center mt-6">
           <img src={image3} width={590} height={590} alt="" />
@@ -87,7 +96,6 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
