@@ -20,8 +20,8 @@ const Header = () => {
   const seconds = flashSale % 60;
 
   return (
-    <div>
-      <div className="bg-primary   text-tertiary flex flex-row items-center justify-center  h-[7vh]">
+    <div className="bg-tertiary">
+      <div className="bg-primary   text-tertiary flex flex-row items-center justify-center  h-[7vh] font-merriweather-light">
         <div className="uppercase">
           Flash Sale Ends In: {hours}h {minutes}m {seconds}s
         </div>
@@ -33,32 +33,32 @@ const Header = () => {
 
       <div className="bg-tertiary h-[2rem]"> </div>
 
-      <div className=" bg-primary h-fit w-full">
+      <div className=" bg-primary h-fit w-full font-merriweather-regular">
         <div className=" flex flex-wrap relative items-center justify-center">
           <img src={image1} width={590} height={590} alt="" />
           <img src={image2} width={590} height={590} alt="" />
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
             <h3 className="text-tertiary uppercase text-3xl max-sm:text-center ">
               autumn collection
             </h3>
             <Button
               value="Shop Now"
-              className=" mt-5 lg:ml-[5rem] bg-tertiary text-primary px-7 py-4 rounded-sm shadow-lg ml-[4rem]  font-semibold text-xl uppercase">
+              className=" mt-5 lg:ml-[5rem] bg-tertiary text-primary px-7 py-4 rounded-sm shadow-lg ml-[4rem]  font-semibold text-xl uppercase hover:bg-slate-300">
               {" "}
             </Button>
           </div>
         </div>
       </div>
-      <div className="bg-tertiary h-[15rem] flex items-center justify-center">
-        <h3 className="text-primary text-3xl max-sm:text-center font-semibold ">
+      <div className="bg-tertiary h-[15rem] flex items-center justify-center font-merriweather-regular">
+        <h3 className="text-primary text-3xl max-sm:text-center   font-great-vibes ">
           Crafting Style, Embracing the Connoisseur.
         </h3>
       </div>
       <div className="bg-tertiary">
-        <h3 className="text-center text-primary font-semibold text-3xl mb-3 font-serif">
+        <h3 className="text-center text-primary font-semibold text-3xl mb-3 font-merriweather-regular">
           NEW ARRIVALS
         </h3>
-        <div className="flex flex-row items-center justify-center max-sm:flex-col mb-4  gap-5">
+        <div className="flex flex-row items-center justify-center max-sm:flex-col mb-4 font-merriweather-regular  gap-5">
           <Card
             productImage={product1}
             productName="Maroon Suit"
@@ -76,21 +76,23 @@ const Header = () => {
             productPrice={399}></Card>
         </div>
       </div>
-      <Button
-        className="bg-secondary text-tertiary px-5 py-3 rounded-sm shadow-lg  ml-[47%] mb-4"
-        value="Visit There"
-        to="/mensfashion"></Button>
+      <div className="bg-tertiary h-[15rem] flex items-center justify-center font-merriweather-regular">
+        <h3 className="text-primary text-3xl max-sm:text-center   font-great-vibes ">
+          Crafting Style, Embracing the Connoisseur.
+        </h3>
+      </div>
+
       <div className=" bg-primary h-fit w-full mb-6">
         <div className=" flex flex-wrap relative items-center justify-center mt-6">
           <img src={image3} width={590} height={590} alt="" />
           <img src={image4} width={590} height={590} alt="" />
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-merriweather-regular">
             <h3 className="text-tertiary uppercase text-3xl max-sm:text-center ">
               build your legacy
             </h3>
             <Button
               value="Shop Now"
-              className=" mt-5 lg:ml-[5rem] bg-tertiary text-primary px-7 py-4 rounded-sm shadow-lg ml-[4rem] font-semibold text-xl uppercase">
+              className=" mt-5 lg:ml-[5rem] bg-tertiary text-primary px-7 py-4 rounded-sm shadow-lg ml-[4rem] font-semibold text-xl uppercase hover:bg-slate-300">
               {" "}
             </Button>
           </div>
