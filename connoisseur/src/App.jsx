@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import MensFashion from "./pages/MensFashion/MensFashion";
-import { SignUp, WomensFashion, Login } from "./pages";
+import { SignUp, WomensFashion, Login, AddtoCart } from "./pages";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -19,6 +19,7 @@ function App() {
           <Route path="/womensfashion" element={<WomensFashion />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/addtocart" element={<AddtoCart />} />
         </Routes>
         <Footer />
       </BrowserRouter>

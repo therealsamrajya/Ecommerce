@@ -1,7 +1,8 @@
-import React from "react";
-import Button from "./Button";
+import React, { useState } from "react";
+import useStore from "../useStore";
 
 const Card = ({
+  id,
   productName,
   productPrice,
   productImage,
@@ -11,8 +12,11 @@ const Card = ({
   cardBgColor = "bg-tertiary",
   priceColor = "text-primary",
   titleColor = "text-primary",
-  ratingColor = "text-primary", // Default background color for the card
+  ratingColor = "text-primary",
 }) => {
+  const addToCart = useStore((state) => state.addToCart);
+  const [message, setMessage] = useState("");
+
   const renderStars = (rating) => {
     const stars = [];
     for (let i = 0; i < 5; i++) {
@@ -25,6 +29,21 @@ const Card = ({
       );
     }
     return stars;
+  };
+
+  const handleAddToCart = () => {
+    const product = {
+      id,
+      productName,
+      productPrice,
+      productImage,
+      productRating,
+    };
+    addToCart(product);
+    setMessage("Added successfully!");
+    setTimeout(() => {
+      setMessage("");
+    }, 3000);
   };
 
   return (
@@ -53,11 +72,15 @@ const Card = ({
           <span className={`text-3xl font-bold ${priceColor}`}>
             ${productPrice}
           </span>
-          <Button
-            value="Add to Cart"
+          <button
             className={`${buttonBgColor} ${buttonTextColor} px-7 py-4 rounded-sm shadow-lg hover:bg-slate-300`}
-          />
+            onClick={handleAddToCart}>
+            Add to Cart
+          </button>
         </div>
+        {message && (
+          <div className="mt-2 text-green-600 text-sm">{message}</div>
+        )}
       </div>
     </div>
   );

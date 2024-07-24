@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { FaSearch, FaBars, FaUser } from "react-icons/fa";
 import { navlogo } from "../assets/assets";
 import Button from "./Button";
+import { IoMdCart } from "react-icons/io";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -77,6 +78,9 @@ const Navbar = () => {
                   className="bg-secondary text-tertiary px-5 py-3 rounded-sm shadow-lg hover:bg-primary  max-sm:text-sm max-sm:px-2  transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300"></Button>
               </div>
             </div>
+            <NavLink to="/addtocart">
+              <IoMdCart className="w-[2rem] h-6" />
+            </NavLink>
           </div>
         )}
       </div>
@@ -123,6 +127,9 @@ const Navbar = () => {
                   className="bg-secondary text-tertiary px-4 py-2 rounded-sm shadow-lg hover:bg-primary flex items-center  max-sm:text-sm max-sm:px-2  transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300"></Button>
               </div>
             </div>
+            <NavLink to="/addtocart">
+              <IoMdCart className="w-[2rem] h-6" />
+            </NavLink>
           </div>
         </div>
       )}
